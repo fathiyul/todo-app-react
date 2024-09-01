@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TodoList from './TodoList';
 import './App.css';
 
 function App() {
@@ -40,14 +41,7 @@ function App() {
         placeholder="Enter a new task"
       />
       <button onClick={addTodo}>Add Task</button>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index} className={todo.completed ? 'completed' : ''}>
-            <span onClick={() => toggleCompleted(index)}>{todo.text}</span>
-            <button onClick={() => deleteTodo(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <TodoList todos={todos} toggleCompleted={toggleCompleted} deleteTodo={deleteTodo} />
     </div>
   );
 }
