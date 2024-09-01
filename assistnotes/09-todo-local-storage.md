@@ -1,12 +1,52 @@
+# Adding Local Storage to Todo App
+
+To add local storage functionality to our Todo app, we'll need to modify our `App.js` file. We'll use the `useEffect` hook to handle loading and saving todos to local storage.
+
+## Step 1: Import useEffect
+
+At the top of your `App.js` file, modify the import statement to include `useEffect`:
+
+```javascript
+import React, { useState, useEffect } from 'react';
+```
+
+## Step 2: Load Todos from Local Storage
+
+Add a `useEffect` hook to load todos from local storage when the component mounts:
+
+```javascript
+useEffect(() => {
+  const storedTodos = JSON.parse(localStorage.getItem('todos'));
+  if (storedTodos) setTodos(storedTodos);
+}, []);
+```
+
+## Step 3: Save Todos to Local Storage
+
+Add another `useEffect` hook to save todos to local storage whenever they change:
+
+```javascript
+useEffect(() => {
+  localStorage.setItem('todos', JSON.stringify(todos));
+}, [todos]);
+```
+
+## Full Updated App.js
+
+Here's what your `App.js` should look like now:
+
+```jsx
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [todos, setTodos] = useState(() => {
-    const storedTodos = localStorage.getItem('todos');
-    return storedTodos ? JSON.parse(storedTodos) : [];
-  });
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    if (storedTodos) setTodos(storedTodos);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -53,3 +93,4 @@ function App() {
 }
 
 export default App;
+```
