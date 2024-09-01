@@ -39,6 +39,15 @@ li {
   align-items: center;
 }
 
+.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li span {
+  cursor: pointer;
+}
+
 li button {
   background-color: #ff4d4d;
   color: white;
@@ -46,17 +55,9 @@ li button {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
+  text-decoration: none;  /* Ensure no text decoration on button */
 }
 
 li button:hover {
   background-color: #ff3333;
-}
-
-.completed {
-  text-decoration: line-through;
-  color: #888;
-}
-
-li span {
-  cursor: pointer;
 }
