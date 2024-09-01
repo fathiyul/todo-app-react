@@ -7,9 +7,15 @@ function App() {
 
   const addTodo = () => {
     if (input.trim() !== '') {
-      setTodos([...todos, input]);
+      setTodos([...todos, { text: input, completed: false }]);
       setInput('');
     }
+  };
+
+  const toggleCompleted = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
   };
 
   return (
@@ -24,7 +30,9 @@ function App() {
       <button onClick={addTodo}>Add Task</button>
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+          <li key={index} className={todo.completed ? 'completed' : ''}>
+            <span onClick={() => toggleCompleted(index)}>{todo.text}</span>
+          </li>
         ))}
       </ul>
     </div>

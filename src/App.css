@@ -35,3 +35,12 @@ li {
   padding: 10px;
   border-radius: 4px;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li span {
+  cursor: pointer;
+}
