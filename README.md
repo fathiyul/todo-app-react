@@ -38,6 +38,14 @@ src/
 - `TodoItem.js`: Component for rendering individual todo items
 - `App.css`: Styles for the application
 
+## Prerequisites
+
+Before setting up the frontend, ensure you have the backend up and running. The backend repository can be found at:
+
+[https://github.com/fathiyul/todo-app-backend](https://github.com/fathiyul/todo-app-backend)
+
+Follow the instructions in the backend README to set it up before proceeding with the frontend setup.
+
 ## Setup and Installation
 
 1. Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
