@@ -120,13 +120,15 @@ function App() {
         <span>Welcome, {user.username}!</span>
         <button onClick={handleLogout} className="logout-button">Logout</button>
       </div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter a new task"
-      />
-      <button onClick={addTodo}>Add Task</button>
+      <form onSubmit={(e) => { e.preventDefault(); addTodo(); }}>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Enter a new task"
+        />
+        <button type="submit">Add Task</button>
+      </form>
       <TodoList todos={todos} toggleCompleted={toggleCompleted} deleteTodo={deleteTodo} />
     </div>
   );
