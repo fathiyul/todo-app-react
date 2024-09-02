@@ -58,15 +58,10 @@ li button {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
-  text-decoration: none;
   width: auto;
 }
 
-li button:hover {
-  background-color: #ff3333;
-}
-
-.login-form {
+.login-form, .signup-form {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -76,17 +71,17 @@ li button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.login-form h2 {
+.login-form h2, .signup-form h2 {
   margin-top: 0;
   margin-bottom: 20px;
   color: #333;
 }
 
-.login-form input {
+.login-form input, .signup-form input {
   margin-bottom: 15px;
 }
 
-.login-form button {
+.login-form button, .signup-form button {
   margin-top: 10px;
 }
 

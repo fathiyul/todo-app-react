@@ -4,12 +4,12 @@ import TodoItem from './TodoItem';
 function TodoList({ todos, toggleCompleted, deleteTodo }) {
   return (
     <ul>
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <TodoItem
-          key={index}
+          key={todo.id}
           todo={todo}
-          toggleCompleted={() => toggleCompleted(index)}
-          deleteTodo={() => deleteTodo(index)}
+          toggleCompleted={() => toggleCompleted(todo)}
+          deleteTodo={() => deleteTodo(todo.id)}
         />
       ))}
     </ul>

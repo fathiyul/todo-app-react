@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-function LoginForm({ onLogin, onSwitchToSignup }) {
+function SignupForm({ onSignup, onSwitchToLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin(username, password);
+    onSignup(username, password);
   };
 
   return (
     <div className="login-form">
-      <h2>Login</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -27,14 +27,14 @@ function LoginForm({ onLogin, onSwitchToSignup }) {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
       <p>
-        Don't have an account?{' '}
-        <button onClick={onSwitchToSignup}>Sign Up</button>
+        Already have an account?{' '}
+        <button onClick={onSwitchToLogin}>Log In</button>
       </p>
     </div>
   );
 }
 
-export default LoginForm;
+export default SignupForm;

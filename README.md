@@ -57,7 +57,6 @@ src/
 
 - Add due dates for tasks
 - Implement task categories or tags
-- Add user authentication to support multiple users
 - Implement drag and drop for task reordering
 
 ## Contributing
